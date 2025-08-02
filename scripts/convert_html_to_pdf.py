@@ -23,7 +23,7 @@ def convert_html_to_pdf(book_name, file_name):
 
     if not os.path.isfile(output_file_path):    
         converter.convert(
-            f'file:///{NOTION_EXPORT_DIR_PATH}/{DB_FILE_NAME}/{file_name}',
+            f'file:///{NOTION_EXPORT_DIR_PATH}/{DB_FILE_NAME}/{file_name.replace("#", "%23")}',
             output_file_path,
             compress=True, power=4,
             print_options={
